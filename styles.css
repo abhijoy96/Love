@@ -1,0 +1,194 @@
+/* Reset default margin/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Great Vibes', cursive;
+    background: linear-gradient(45deg, #ff99cc, #ff66cc, #ff3399);
+    background-size: 600% 600%;
+    animation: gradientBackground 15s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    animation: fadeIn 3s ease-in;
+}
+
+.message h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    opacity: 0;
+    animation: fadeInText 4s forwards;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Text shadow for contrast */
+}
+
+.message h2 {
+    font-size: 2rem;
+    opacity: 0;
+    animation: fadeInText 6s forwards;
+    animation-delay: 2s;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Text shadow for contrast */
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #ff66cc;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInText 4s forwards;
+    animation-delay: 4s;
+    position: relative;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Text shadow for better visibility */
+}
+
+button:hover {
+    background-color: #ff3399;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+button::after {
+    content: '✨';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: sparkle 1.5s infinite ease-in-out;
+}
+
+.heart {
+    font-size: 3rem;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: floatingHearts 5s ease-in-out infinite;
+}
+
+#heartfeltMessage {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: revealMessage 5s forwards;
+    animation-delay: 2s;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background for text */
+    color: #f8f8f8; /* Lighter text color */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6); /* Subtle shadow for better contrast */
+}
+
+#heartfeltMessage p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    animation: pulseText 1.5s infinite alternate;
+}
+
+#reliveButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #ff3399;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInText 4s forwards;
+    animation-delay: 7s;
+    display: block;
+    margin: 20px auto;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Picture Styles */
+#pictures {
+    display: flex;
+    justify-content: space-around;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: revealPictures 4s forwards;
+    animation-delay: 5s;
+}
+
+.picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: pictureAnimation 2s ease-in-out forwards;
+}
+
+.picture:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.picture:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.picture:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.picture:nth-child(4) {
+    animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes revealMessage {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseText {
+    0% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+@keyframes pictureAnimation {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes revealPictures {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
